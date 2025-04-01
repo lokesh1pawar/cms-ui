@@ -1,0 +1,195 @@
+.complaint-page {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  text-align: left;
+}
+
+.progress-bar {
+  display: flex;
+  margin-bottom: 1rem;
+  border-radius: 20px;
+  overflow: hidden;
+  font-size: 0.7rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.progress-step {
+  flex: 1;
+  padding: 0.35rem 0.25rem;
+  background-color: #6c757d;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: white;
+}
+
+.progress-step:first-child {
+  background-color: #ffc107;
+  color: black;
+}
+
+.progress-step:nth-child(2) {
+  background-color: #6c757d;
+}
+
+.progress-step:nth-child(3) {
+  background-color: rgb(25, 135, 84);
+}
+
+.progress-step:nth-child(4),
+.progress-step:nth-child(5),
+.progress-step:last-child {
+  background-color: #6c757d;
+}
+
+.progress-step.active {
+  font-weight: 500;
+}
+
+.page-title {
+  color: #205493;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+  color: #323a44;
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.complaint-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.complaint-option {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.option-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.option-content {
+  flex: 1;
+}
+
+.option-title {
+  display: block;
+  font-weight: 500;
+  color: #205493;
+  margin-bottom: 0.5rem;
+}
+
+.option-description {
+  font-size: 0.875rem;
+  color: #5b616b;
+  line-height: 1.4;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.page-footer {
+  display: flex;
+  gap: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #ddd;
+}
+
+.footer-link {
+  color: #0071bc;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #205493;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #112e51;
+}
+
+.btn-primary.disabled {
+  background-color: #aeb0b5;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: #5b616b;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #323a44;
+}
+
+.policy-links {
+  display: flex;
+  gap: 200px;
+  margin-top: 6px;
+  justify-content: center;
+}
+
+.policy-links a {
+  color: rgb(13, 110, 253);
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .complaint-page {
+    margin: 1rem;
+  }
+
+  .progress-bar {
+    display: none;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .page-footer {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}

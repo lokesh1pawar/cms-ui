@@ -1,0 +1,31 @@
+export const complainantDetailsInitialState = {
+  isAnonymous: '',
+  organizationName: '',
+  organizationType: '--None--',
+  organizationTypeOther: '',
+  organizationRole: '',
+  organizationPhone: '',
+  title: '--None--',
+  firstName: '',
+  middleInitial: '',
+  lastName: '',
+  addressLine1: '',
+  addressLine2: '',
+  city: '',
+  state: '--None--',
+  zipCode: '',
+  zipExt: '',
+  email: '',
+  contactPhone: '',
+  contactPhoneExt: '',
+  cellPhone: '',
+};
+
+export const progressSteps = [
+  'Complaint Type',
+  'Complainant Details',
+  'FAE Details',
+  'Complaint Details',
+  'Review Complaint',
+  'Submitted',
+];
