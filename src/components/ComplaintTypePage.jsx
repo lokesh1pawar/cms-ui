@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/ComplaintTypePage.css';
+import Footer from './Footer';
 
 const ComplaintTypePage = () => {
   const [selectedType, setSelectedType] = useState('');
@@ -42,64 +43,60 @@ const ComplaintTypePage = () => {
   ];
 
   return (
-    <div className="complaint-page">
-      <div className="progress-bar">
-        {progressSteps.map((step, index) => (
-          <div
-            key={step}
-            className={`progress-step ${index === 0 ? 'active' : ''}`}
+    <>
+      <div className="complaint-page">
+        <div className="progress-bar">
+          {progressSteps.map((step, index) => (
+            <div
+              key={step}
+              className={`progress-step ${index === 0 ? 'active' : ''}`}
+            >
+              {step}
+            </div>
+          ))}
+        </div>
+
+        <h2 className="page-title">Complaint Type</h2>
+        <h3 className="page-subtitle">Make a selection below</h3>
+
+        <div className="complaint-options">
+          {complaintTypes.map((type) => (
+            <div key={type.id} className="complaint-option">
+              <label className="option-label">
+                <input
+                  type="radio"
+                  name="complaintType"
+                  value={type.id}
+                  checked={selectedType === type.id}
+                  onChange={(e) => setSelectedType(e.target.value)}
+                />
+                <div className="option-content">
+                  <span className="option-title">{type.title}</span>
+                  <p className="option-description">{type.description}</p>
+                </div>
+              </label>
+            </div>
+          ))}
+        </div>
+
+        <div className="button-group">
+          <Link to="/" className="btn btn-secondary">
+            &lt;Welcome
+          </Link>
+          <button type="button" className="btn btn-secondary">
+            Cancel
+          </button>
+          <Link
+            to="/complainant-details"
+            className={`btn btn-secondary ${!selectedType ? 'disabled' : ''}`}
+            onClick={(e) => !selectedType && e.preventDefault()}
           >
-            {step}
-          </div>
-        ))}
+            Complainant Information&gt;
+          </Link>
+        </div>
       </div>
-
-      <h2 className="page-title">Complaint Type</h2>
-      <h3 className="page-subtitle">Make a selection below</h3>
-
-      <div className="complaint-options">
-        {complaintTypes.map((type) => (
-          <div key={type.id} className="complaint-option">
-            <label className="option-label">
-              <input
-                type="radio"
-                name="complaintType"
-                value={type.id}
-                checked={selectedType === type.id}
-                onChange={(e) => setSelectedType(e.target.value)}
-              />
-              <div className="option-content">
-                <span className="option-title">{type.title}</span>
-                <p className="option-description">{type.description}</p>
-              </div>
-            </label>
-          </div>
-        ))}
-      </div>
-
-      <div className="button-group">
-        <Link to="/" className="btn btn-secondary">
-          &lt;Welcome
-        </Link>
-        <button type="button" className="btn btn-secondary">
-          Cancel
-        </button>
-        <Link
-          to="/complainant-details"
-          className={`btn btn-secondary ${!selectedType ? 'disabled' : ''}`}
-          onClick={(e) => !selectedType && e.preventDefault()}
-        >
-          Complainant Information&gt;
-        </Link>
-      </div>
-
-      <hr className="title-divider" />
-      <div className="policy-links">
-        <Link to="/">Home</Link>
-        <Link to="/privacy">Privacy Policy</Link>
-        <Link to="/security">Security Policy</Link>
-      </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 
