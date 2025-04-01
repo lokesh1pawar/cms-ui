@@ -133,11 +133,11 @@
 .hamburger-menu {
   display: none;
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 0.7rem;
   z-index: 1001;
   position: fixed;
-  top: 1rem;
-  right: 1rem;
+  top: 4rem;
+  right: 2rem;
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -231,8 +231,8 @@
   }
 
   .hamburger-menu {
-    top: 0.75rem;
-    right: 0.75rem;
+    top: 2rem;
+    right: 1rem;
   }
 }
 
