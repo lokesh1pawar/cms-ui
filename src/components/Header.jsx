@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { RiLoginBoxLine } from 'react-icons/ri';
 import { MdPersonAddAlt } from 'react-icons/md';
@@ -7,13 +7,27 @@ import '../styles/Header.css';
 import bannerImage from '../assets/all-purpose-banner-v3.jpg';
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <header>
       <img src={bannerImage} alt="CMS Banner" className="banner-image" />
       <div className="header">
         <div className="header-container">
           <div className="header-content">
-            <nav className="nav-menu">
+            <div
+              className={`hamburger-menu ${isMenuOpen ? 'active' : ''}`}
+              onClick={toggleMenu}
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <nav className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
               <Link to="/">Home</Link>
               <Link to="/about">About ASETT</Link>
               <Link to="/contact">Contact Us</Link>
